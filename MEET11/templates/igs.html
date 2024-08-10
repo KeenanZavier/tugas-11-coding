@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Halaman IGS</h1>
+    <ul>
+        {% for item in data %}
+ <li class="{% if item == 'I' %}red-background{% elif item == 'G' %}green-background{% elif item == 'S' %}blue-background{% endif %}">
+                {{ item }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
+### Kode static/style.css:
+css
+.red-background {
+    background-color: red;
+    color: white;
+}
+
+.green-background {
+    background-color: green;
+    color: white;
+}
+
+.blue-background {
+    background-color: blue;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
